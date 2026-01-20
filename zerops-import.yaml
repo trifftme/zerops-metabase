@@ -16,3 +16,4 @@ services:
       cpuMode: SHARED
     minContainers: 1
     maxContainers: 1
+    enableSubdomainAccess: true
