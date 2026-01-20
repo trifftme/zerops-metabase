@@ -1,0 +1,18 @@
+project:
+  name: metabase
+  corePackage: LIGHT
+  tags:
+    - metabase
+services:
+  - hostname: metabasedb
+    type: postgresql@17
+    mode: NON_HA
+    priority: 10
+  - hostname: metabase
+    type: java@21
+    buildFromGit: https://github.com/jansaidl/recipe-metabase
+    verticalAutoscaling:
+      ram: 5
+      cpuMode: SHARED
+    minContainers: 1
+    maxContainers: 1

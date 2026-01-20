@@ -1,0 +1,19 @@
+zerops:
+  - setup: metabase
+    run:
+      os: ubuntu
+      base: java@21
+      prepareCommands:
+        - wget -O /var/www/metabase.jar https://downloads.metabase.com/latest/metabase.jar
+      start: java -Xmx4g --add-opens java.base/java.nio=ALL-UNNAMED  -jar metabase.jar
+      envVariables:
+        MB_DB_TYPE: postgres
+        MB_DB_DBNAME: ${metabasedb_dbName}
+        MB_DB_PORT: ${metabasedb_port}
+        MB_DB_USER: ${metabasedb_user}
+        MB_DB_PASS: ${metabasedb_password}
+        MB_DB_HOST: ${metabasedb_hostname}
+      ports:
+        - port: 3000
+          httpSupport: true
+
