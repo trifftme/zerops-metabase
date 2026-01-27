@@ -4,7 +4,7 @@ zerops:
       os: ubuntu
       base: java@21
       prepareCommands:
-        - wget -O /var/www/metabase.jar https://downloads.metabase.com/latest/metabase.jar
+        - wget -O /var/www/metabase.jar https://downloads.metabase.com/enterprise/v1.58.3.x/metabase.jar
       start: java -Xmx4g --add-opens java.base/java.nio=ALL-UNNAMED  -jar metabase.jar
       envVariables:
         MB_DB_TYPE: postgres
