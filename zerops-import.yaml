@@ -10,7 +10,7 @@ services:
     priority: 10
   - hostname: metabase
     type: java@21
-    buildFromGit: https://github.com/jansaidl/recipe-metabase
+    buildFromGit: https://github.com/trifftme/zerops-metabase
     verticalAutoscaling:
       ram: 5
       cpuMode: SHARED
