@@ -13,6 +13,7 @@ zerops:
         MB_DB_USER: ${metabasedb_user}
         MB_DB_PASS: ${metabasedb_password}
         MB_DB_HOST: ${metabasedb_hostname}
+        MB_SEND_EMAIL_ON_FIRST_LOGIN_FROM_NEW_DEVICE: false
       ports:
         - port: 3000
           httpSupport: true
